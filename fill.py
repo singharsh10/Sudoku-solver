@@ -4,14 +4,14 @@ import time
 sudoku = []
 
 for i in range(9):
-    row = list(input( f"Enter row {i}:  "))
+    row = list(input(f"Enter row {i + 1}:  "))
     tmp = []
     for val in row:
         tmp.append(int(val))
 
     sudoku.append(tmp)
 
-time.sleep(2)
+time.sleep(1)
 
 
 def valid_number(sud, row, column, num):
@@ -52,7 +52,7 @@ def solve(sud):
     while 1:
         position = find_empty(sud)
 
-        if position != []:
+        if position:
             row = position[0]
             column = position[1]
 
@@ -61,12 +61,12 @@ def solve(sud):
                     sud[row][column] = num
                     if not solve(sud):
                         sud[row][column] = 0
+                    else:
+                        return True
 
-            if sud[row][column] == 0:
-                return False
+            return False
 
-        else:
-            return True
+        return True
 
 
 solve(sudoku)
