@@ -1,5 +1,7 @@
-# Code to solve Sudoku on any online website
+#  Online Sudoku Solver
 
+Test at:
+    https://sudoku.com/
 
-Solve the sudoku via recursion and store it and then 
-use pyautogui to make the changes on the browser 
+Solve the sudoku via backtracking and store the result, then 
+use pyautogui to automate the filling of the sudoku grid on the browser 
